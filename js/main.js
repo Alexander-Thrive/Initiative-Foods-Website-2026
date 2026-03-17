@@ -1,26 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Initialize Swiper Carousel for Capabilities
-    const swiper = new Swiper('.capabilitiesSwiper', {
+    // Top Navigation Carousel (4 Sections)
+    const topNavSwiper = new Swiper('.topNavSwiper', {
         slidesPerView: 1,
+        spaceBetween: 20,
+        breakpoints: {
+            640: { slidesPerView: 2 },
+            900: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 }
+        }
+    });
+
+    // Customer Logos Autoplay Carousel
+    const customersSwiper = new Swiper('.customersSwiper', {
+        slidesPerView: 2,
         spaceBetween: 30,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+        loop: true,
+        speed: 3000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
         },
         breakpoints: {
-            // when window width is >= 768px
-            768: {
-                slidesPerView: 2,
-            },
-            // when window width is >= 1024px
-            1024: {
-                slidesPerView: 3,
-            }
+            640: { slidesPerView: 3 },
+            900: { slidesPerView: 5 },
+            1200: { slidesPerView: 6 }
         }
     });
 
